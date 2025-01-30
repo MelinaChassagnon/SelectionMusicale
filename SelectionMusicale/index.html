@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Selection Musicale</title>
+    <link rel="icon" type="image" href="img/vinyl1.png">
+</head>
+
+<body>
+    <div class="header">
+        <img src="img/titre.png" alt='titre_page' class="titre">
+    </div>
+    <div class="modal-container">
+        <div class="overlay modal-trigger"></div>
+        <div class="modal">
+            <button class="close-modal modal-trigger">X</button>
+            <h2>Ajouter une musique</h2>
+            <form action="/" type="GET" id="form" novalidate>
+                <div class="form1">
+                    <div>
+                        <input aria-label="nom_musique_obligatoire" aria-describedby="champ_nom_musique" oninput="form_musique(this)"
+                            type="text" name="musique" id="musique" class="input" maxlength="21" placeholder="musique*" autocomplete="off" required>
+                            <p class="counter" id="counter1"></p>
+                        <span aria-describedby="obligatoire_erreur" class="error_msg error_musique" id="musiqueError">Obligatoire*</span>
+                    </div>
+
+                    <div>
+                        <input aria-label="audio_obligatoire" aria-describedby="champ_audio" type="url" name="audio" id="audio" placeholder="audio*" class="input" autocomplete="off"  required>
+                        <span aria-describedby="obligatoire_erreur" class="error_msg error_audio"
+                            id="audioError">Obligatoire*</span>
+                        <span aria-describedby="url_erreur" class="error_msg" id="audioError2">Doit être une url*</span>
+                    </div>
+                    <div>
+                        <input aria-label="image_obligatoire" aria-describedby="champ_image" oninput="form_image(this)"
+                            type="url" name="image" id="image" class="input" placeholder="image*" autocomplete="off" required>
+                        <span aria-describedby="obligatoire_erreur" class="error_msg error_image"
+                            id="imageError">Obligatoire*</span>
+                        <span aria-describedby="url_erreur" class="error_msg error_image" id="imageError2">Doit être une url*</span>
+
+                    </div>
+                    <input aria-label="lien_Spotify" aria-describedby="champ_lienSpotify" type="url" name="lien1"
+                        id="lien1" placeholder="lien Spotify (url)" class="input" autocomplete="off">
+                    <input aria-label="lien_Youtube" aria-describedby="champ_lienYoutube" type="url" name="lien2"
+                        id="lien2" placeholder="lien Youtube (url)" class="input" autocomplete="off">
+                    <input aria-label="lien_Deezer" aria-describedby="champ_lienDeezer" type="url" name="lien3"
+                        id="lien3" placeholder="lien Deezer (url)" class="input" autocomplete="off">
+                    <div class="form2">
+                        <div>
+                            <input aria-label="artiste_obligatoire" aria-describedby="champ_artiste" oninput="form_artiste(this)"
+                                type="text" name="artiste" id="artiste" class="input" maxlength="21" placeholder="artiste*" autocomplete="off" required>
+                                <p class="counter" id="counter2"></p>
+                            <span aria-describedby="obligatoire_erreur" class="error_msg" id="artisteError">Obligatoire*</span>
+                        </div>
+                        <div>
+                            <textarea aria-label="description_obligatoire" aria-describedby="champ_description"
+                                oninput="form_description(this)" type="text" name="description" id="description"
+                                class="input" maxlength="700" placeholder="description*" autocomplete="off" required></textarea>
+                            <p class="counter" id="counter"></p>
+                            <span aria-describedby="obligatoire_erreur" class="error_msg"
+                                id="descriptionError">Obligatoire*</span>
+                        </div>
+                        
+                        <div>
+                            <input type="submit" value="Envoyer" class="submit" id="submit">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class='preview_container'>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <button class="modal-btn modal-trigger">
+
+        <img src="img/vinyl1.png" alt="bouton_ouverture_formulaire" class="btn_vinyle">
+        <img src="img/Pochette.png" alt="bouton_ouverture_formulaire" class="btn_pochette">
+    </button>
+
+    <div class="liste-musiques">
+    </div>
+
+
+
+    <footer>
+        <p>Copyright © 2025 Tous droits réservés.</p>
+        <details>
+            <summary>Mentions Légales</summary>
+            <div>
+                <br>
+                <h3>Propriétaire du site</h3>
+                <p>Mélina Chassagnon</p>
+                <p>melina.chassagnon@gmail.com</p>
+                <p>5 place d’Amilly, 77700 Serris, France</p>
+                <br>
+                <h3>Hébergement</h3>
+                <p>o2switch</p>
+                <p>222-224 Boulevard Gustave Flaubert</p>
+                <p>63000 Clermont-Ferrand</p>
+                <p>www.o2switch.fr</p>
+                <br>
+                <h3>Propriété intellectuelle</h3>
+                <p>Tous les contenus présents sur ce site (textes, images, audios etc) sont utilisés à des fins non
+                    lucratives.</p>
+                <br>
+                <h4>droits d’auteurs</h4>
+                Glass Animals - Wolf Tone |
+                Beartooth - Red Bull Records, Kobalt Music Publishing, Red Bull Songs |
+                Kodaline - B-Unique/RCA, B-Unique Publishing, Kobalt Music Publishing, Spirit Music Group |
+                The Amazing Devil |
+                M83 - M83 Recording Inc |
+                Mélina Chassagnon
+                <br>
+                <h4>liens hypertexts</h4>
+                Les liens mis en œuvre en direction d'autres sites ne sont pas de notre responsabilité, car nous
+                n'exerçons aucun contrôle sur le contenu de ces sites. En conséquence, nous ne supportons aucune
+                responsabilité quant au contenu, publicités, produits, services ou tout autre outil disponible sur ou à
+                partir de ces sites ou sources externes qu'elle n'a ni vérifié ni approuvé et ne pouvons être tenues
+                pour responsables de tous dommages consécutifs ou en relation avec l'utilisation de ces liens.
+                </p>
+            </div>
+        </details>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
